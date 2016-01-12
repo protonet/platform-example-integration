@@ -1,0 +1,15 @@
+logstash:
+  build: logstash
+  links:
+    - elasticsearch
+  command: 'logstash agent -f /logstash.conf'
+
+kibana:
+  image: kibana@4
+  links:
+    - elasticsearch
+  ports:
+    - "80:5601"
+  
+elasticsearch:
+  image: elasticsearch@2
