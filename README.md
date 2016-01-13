@@ -64,4 +64,4 @@ A highly recommended, more generic overview of core principles useful when worki
 Enough with all the theory - we have fully documented and working examples that you can use as reference on getting started with Docker integration. All examples are selected so that minimal code is needed.
 
   * **[Logstash](example-logstash/)** - A fully working example that creates a custom logstash image that consumes the heise.de RSS feed, puts it into Elasticsearch and makes it searchable using Kibana
-  * **[Ruby Web App](example-ruby-webapp/)** - Shows how to use containerize a Ruby web application using the community-provided [Ruby docker base image](https://hub.docker.com/_/ruby/)
+  * **[Ruby Web App](example-ruby-webapp/)** - Shows how to containerize a Ruby web application using the community-provided [Ruby docker base image](https://hub.docker.com/_/ruby/)
