@@ -14,8 +14,7 @@ On Linux [docker](https://docs.docker.com/linux/step_one/) and [docker-compose](
 
 Protonet Platform provides persistent storage as file system (mounted on `/data/`), as well as multiple structured storage services (for example Elasticsearch, MySQL, and PostgreSQL).
 
-For local development and testing these are provided by simple docker containers. Dependencies and different independent testing environment are managed using `docker-compose`.
-
+For local development and testing these are provided by simple docker containers. Dependencies and different independent testing environments are managed using `docker-compose`.
 
 ## Initial Configuration
 
@@ -62,34 +61,8 @@ To understand best practice regarding building a `Dockerfile` and thus container
 * [Dockerfile best practices](https://docs.docker.com/engine/articles/dockerfile_best-practices/)
 * [Tutorials on Dockerizing various services in the Docker documentation](https://docs.docker.com/engine/examples/)
 
-## Examples
+## Example Integrations
 
-Example `Dockerfile`:
+We have fully documented and working examples that you can use as reference on getting started with Docker integration:
 
-```dockerfile
-FROM logstash
-RUN /opt/logstash/bin/plugin install logstash-input-rss
-ADD logstash.conf /logstash.conf
-```
-
-`docker-compose.yml`
-
-```yaml
-logstash:
-  build: logstash
-  links:
-    - elasticsearch
-  command: 'logstash agent -f /logstash.conf'
-
-kibana:
-  image: kibana@4
-  links:
-    - elasticsearch
-  ports:
-    - "80:5601"
-  
-elasticsearch:
-  image: elasticsearch@2
-```
-
-Now first build the docker image with `docker-compose build` and then start the stack with `docker-compose up`. After a moment the whole stack should be running and Logstash start to index the Heise Newsticker Newsfeed.
+  * **[Logstash](logstash/)** - A fully working example that creates a custom logstash image that consumes the heise.de RSS feed, puts it into Elasticsearch and makes it searchable using Kibana
