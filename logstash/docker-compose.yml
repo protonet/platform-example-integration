@@ -1,15 +1,25 @@
 logstash:
+  # We want docker to build the image based upon the Dockerfile in this directory
   build: .
+  # Logstash needs access to elasticsearch. The link will make it available inside 
+  # the container at http://elasticsearch:9200
   links:
     - elasticsearch
+  # Execute this command when launching the container. We could also move this
+  # into the image itself using `CMD logstash agent -f /logstash.conf` in our Dockerfile.
   command: 'logstash agent -f /logstash.conf'
 
 kibana:
+  # Use the official kibana docker image, pinned at the latest image tagged with version 4
   image: kibana@4
+  # Kibana also needs access to elasticsearch
   links:
     - elasticsearch
+  # Mount port 5601, on which kibana exposes it's http interface within the container
+  # to port 80 on the host system
   ports:
     - "80:5601"
-  
+
 elasticsearch:
+  # Use the latest official elasticsearch v2.x image
   image: elasticsearch@2
