@@ -48,17 +48,23 @@ In most cases products consist of one ore more components, for example a worker,
 As these components are not available from the docker hub we need to build them ourselves:
 
 1. create a directory for each componentent.
-1. add any needed configuration files
-1. create a suitable `Dockerfile`
-1. Extend the docker-compose.yml
+2. add any needed configuration files
+3. create a suitable `Dockerfile`
+4. Extend the docker-compose.yml
 
-Note: Building and packaging of the software typically is usually done in a prior step (most likely by a CI) and thus not part of this readme. To understand best practice regarding building a `Dockerfile` we strongly suggest XXX
+The docker community [provides various base images for popular programming languages](https://blog.docker.com/2014/09/docker-hub-official-repos-announcing-language-stacks/) and versions that you can use for containerizing your software.
 
-#TODO: REF DOKU
-#TODO: REF EXAMPLES 
+**Note**: Building and packaging of the software typically is usually done in a prior step (most likely by a CI) and thus not part of this tutorial. The steps taken by your Continuous Integration solution would be to build a docker image, run your test suite inside the container, then on success push the image to a [Docker Registry](https://docs.docker.com/registry/)
+
+To understand best practice regarding building a `Dockerfile` and thus containerizing software we strongly suggest reviewing the following documentation:
+
+* [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+* [Dockerfile best practices](https://docs.docker.com/engine/articles/dockerfile_best-practices/)
+* [Tutorials on Dockerizing various services in the Docker documentation](https://docs.docker.com/engine/examples/)
+
+## Examples
 
 Example `Dockerfile`:
-
 
 ```dockerfile
 FROM logstash
