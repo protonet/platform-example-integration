@@ -1,4 +1,4 @@
-# Docker for System Integrators
+# Docker for Protonet Platform System Integrators
 
 First steps leading to a local installation suitable for all tasks regarding the integration of an existing application into Protonet Platform.
 
@@ -6,9 +6,7 @@ First steps leading to a local installation suitable for all tasks regarding the
 
 Initial requirements are  `docker`, `docker-compose` and if the development machine does run OS X instead of linux, `docker-machine`. As OS X does not support docker directly VirtualBox will be used to run a linux machine.
 
-
 On Linux [docker](https://docs.docker.com/linux/step_one/) and [docker-compose](https://docs.docker.com/engine/installation/ubuntulinux/) should be readily available, on OS X the [Docker Toolbox](https://www.docker.com/docker-toolbox) installs all requirements.
-
 
 ## Basics
 
@@ -20,17 +18,17 @@ For local development and testing these are provided by simple docker containers
 
 For local development, we start by providing the service dependencies that will later be provided by the Platform using a minimal `docker-compose.yml`:
 
-```yaml
-kibana:
-  image: kibana@4
-  links:
-    - elasticsearch
-  ports:
-    - "80:5601"
-  
-elasticsearch:
-  image: elasticsearch@2
-```
+    ```yaml
+    kibana:
+      image: kibana@4
+      links:
+        - elasticsearch
+      ports:
+        - "80:5601"
+      
+    elasticsearch:
+      image: elasticsearch@2
+    ```
 
 Start the composition with `docker-compose up` and Elasticsearch and Kibana will come up.
 
@@ -44,10 +42,10 @@ In most cases products consist of one ore more components, for example a worker,
 
 As these components are not available from the docker hub we need to build them ourselves:
 
-1. Create a directory for each component.
-2. Add any needed configuration files
-3. Create a suitable `Dockerfile`
-4. Extend the docker-compose.yml
+  1. Create a directory for each component.
+  2. Add any needed configuration files
+  3. Create a suitable `Dockerfile`
+  4. Extend the docker-compose.yml
 
 The docker community [provides various base images for popular programming languages](https://blog.docker.com/2014/09/docker-hub-official-repos-announcing-language-stacks/) and versions that you can use for containerizing your software.
 
@@ -55,9 +53,11 @@ The docker community [provides various base images for popular programming langu
 
 To understand best practice regarding building a `Dockerfile` and thus containerizing software we strongly suggest reviewing the following documentation:
 
-* [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
-* [Dockerfile best practices](https://docs.docker.com/engine/articles/dockerfile_best-practices/)
-* [Tutorials on Dockerizing various services in the Docker documentation](https://docs.docker.com/engine/examples/)
+  * [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+  * [Dockerfile best practices](https://docs.docker.com/engine/articles/dockerfile_best-practices/)
+  * [Tutorials on Dockerizing various services in the Docker documentation](https://docs.docker.com/engine/examples/)
+
+A highly recommended, more generic overview of core principles useful when working in a containerized environment, but not specific to Docker or Protonet Platform is **[The Twelve-Factor App](http://12factor.net/)**
 
 ## Example Integrations
 
