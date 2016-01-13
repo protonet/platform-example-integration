@@ -28,7 +28,7 @@ kibana:
   
 elasticsearch:
   image: elasticsearch@2
-    ```
+```
 
 Start the composition with `docker-compose up` and Elasticsearch and Kibana will come up.
 
