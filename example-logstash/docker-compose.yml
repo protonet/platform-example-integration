@@ -1,6 +1,6 @@
 logstash:
-  # We want docker to build the image based upon the Dockerfile in this directory
-  build: .
+  # We want docker to build the image based upon the Dockerfile in the logstash directory
+  build: logstash
   # Logstash needs access to elasticsearch. The link will make it available inside 
   # the container at http://elasticsearch:9200
   links:

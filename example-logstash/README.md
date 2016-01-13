@@ -1,7 +1,6 @@
 # Platform Integration - Logstash example
 
-This example application builds a custom logstash image that consumes an RSS feed, stores it in elasticsearch that we can
-later browse using Kibana.
+As an example we want to build a simple ELK stack. This consists of [Elasticsearch](https://www.elastic.co/products/elasticsearch) for structured storage, [Logstash](https://www.elastic.co/products/logstash) for data ingestion system and [Kibana](https://www.elastic.co/products/kibana) as an analytics frontend. Elasticsearch and Kibana will represent externally managed dependencies, i.e. they are just used as is. Logstash, in contrast, will be locally configured, much in the way a locally developed component would be.
 
 The `docker-compose.yml` and `Dockerfile` include comments on what is happening.
 
