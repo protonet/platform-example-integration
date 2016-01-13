@@ -1,5 +1,5 @@
 logstash:
-  build: logstash
+  build: .
   links:
     - elasticsearch
   command: 'logstash agent -f /logstash.conf'
