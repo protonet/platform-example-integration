@@ -19,7 +19,7 @@ For local development and testing these are provided by simple docker containers
 
 ## Initial Configuration
 
-As an example we want to build a simple ELK stack. This consists of Elasticsearch for structured storage, Logstash for data ingestion system and Kibana as an  analytics frontend. Elasticsearch and Kibana will represent externally managed dependencies, i.e. they are just used as is. Logstash, in contrast, will be locally configured, much in the way a locally developed component would be.
+As an example we want to build a simple ELK stack. This consists of [Elasticsearch](https://www.elastic.co/products/elasticsearch) for structured storage, [Logstash](https://www.elastic.co/products/logstash) for data ingestion system and [Kibana](https://www.elastic.co/products/kibana) as an analytics frontend. Elasticsearch and Kibana will represent externally managed dependencies, i.e. they are just used as is. Logstash, in contrast, will be locally configured, much in the way a locally developed component would be.
 
 All examples are selected so that minimal code is needed.
 
@@ -39,7 +39,7 @@ elasticsearch:
 
 Start the composition with `docker-compose up` and Elasticsearch and Kibana will come up.
 
-In this case we use [Elasticsearch](https://hub.docker.com/_/elasticsearch/) but [MySQL](https://hub.docker.com/_/mysql/), [PostgreSQL](https://hub.docker.com/_/postgres/) and may more are easily available.
+In this case we use [Elasticsearch](https://hub.docker.com/_/elasticsearch/) but [MySQL](https://hub.docker.com/_/mysql/), [PostgreSQL](https://hub.docker.com/_/postgres/) and many more are easily available.
 
 ## Adding components
 
