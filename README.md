@@ -18,16 +18,16 @@ For local development and testing these are provided by simple docker containers
 
 For local development, we start by providing the service dependencies that will later be provided by the Platform using a minimal `docker-compose.yml`:
 
-    ```yaml
-    kibana:
-      image: kibana@4
-      links:
-        - elasticsearch
-      ports:
-        - "80:5601"
-      
-    elasticsearch:
-      image: elasticsearch@2
+```yaml
+kibana:
+  image: kibana@4
+  links:
+    - elasticsearch
+  ports:
+    - "80:5601"
+  
+elasticsearch:
+  image: elasticsearch@2
     ```
 
 Start the composition with `docker-compose up` and Elasticsearch and Kibana will come up.
