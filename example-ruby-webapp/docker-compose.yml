@@ -1,0 +1,13 @@
+app:
+  # We want docker to build the image based upon the Dockerfile in the app directory
+  build: app
+  # We want to allow access to our running redis service
+  links:
+    - redis
+  # Expose our app server on localhost
+  ports:
+    - "80:5000"
+
+redis:
+  # Just fire up the default redis image as a container
+  image: redis
