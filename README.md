@@ -65,3 +65,7 @@ Enough with all the theory - we have fully documented and working examples that 
 
   * **[Logstash](example-logstash/)** - A fully working example that creates a custom logstash image that consumes the heise.de RSS feed, puts it into Elasticsearch and makes it searchable using Kibana
   * **[Ruby Web App](example-ruby-webapp/)** - Shows how to containerize a Ruby web application using the community-provided [Ruby docker base image](https://hub.docker.com/_/ruby/)
+
+## Cookbook
+
+For some useful tips for solving common problems while developing against platform, we have a **[Cookbook](COOKBOOK.md)**
