@@ -11,7 +11,7 @@ logstash:
 
 kibana:
   # Use the official kibana docker image, pinned at the latest image tagged with version 4
-  image: kibana@4
+  image: "kibana:4"
   # Kibana also needs access to elasticsearch
   links:
     - elasticsearch
@@ -22,4 +22,4 @@ kibana:
 
 elasticsearch:
   # Use the latest official elasticsearch v2.x image
-  image: elasticsearch@2
+  image: "elasticsearch:2"
